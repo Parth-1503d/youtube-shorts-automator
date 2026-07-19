@@ -1,43 +1,25 @@
-🚀 AI YouTube Shorts Automator
+**🚀 AI YouTube Shorts Automator**
+An advanced, fully automated Python pipeline designed to transform a simple CSV spreadsheet of text scripts into high-retention, ready-to-upload faceless vertical videos tailored for YouTube Shorts, TikTok, and Instagram Reels. By executing local Machine Learning models directly on your hardware, this tool bypasses the need for costly cloud API subscriptions. It autonomously orchestrates the entire video production lifecycle: synthesizing zero-shot AI voiceovers, mixing background gameplay and looping music, applying algorithmic zoom jump-cuts, and rendering dynamic, mathematically synced subtitles. What normally requires hours of manual video editing is reduced to minutes, allowing creators to batch-generate an entire month of content from a single text file.
 
-A fully automated Python pipeline that generates faceless YouTube Shorts using local Machine Learning models.
+**✨ Features**
+**Local Voice Cloning**: Uses Coqui XTTSv2 to generate audio natively—zero cloud API costs.
 
-This project reads from a CSV of scripts, utilizes open-source zero-shot voice cloning to generate human-like narration, and dynamically edits the final vertical video with jump cuts, background music, and timed subtitles.
+**Smart Editing**: moviepy automatically mixes voice, background media, and music into a 9:16 format.
 
-✨ Features
+**High Retention**: Features snappy 6-word dynamic subtitles and 15% zoom jump cuts every 4 seconds.
 
-100% Local AI Voice: Uses Coqui TTS (XTTSv2) running locally to clone voices and generate audio without API costs.
+**Resilient Architecture & Runtime Patching**: Ensures out-of-the-box stability via custom monkey patches. It bypasses PyTorch 2.6 security blocks to load XTTSv2 weights and routes torchaudio through soundfile to prevent Windows FFmpeg crashes, eliminating complex manual setups.
 
-Automated Video Editing: Uses moviepy to assemble vertical (9:16) videos.
+**🛠️ Quick Start**
+**Prerequisites**: Install Python 3.10+, eSpeak-NG (must be in C:\Program Files\eSpeak NG), and ImageMagick.
 
-Dynamic Jump Cuts: Automatically zooms in 15% every 4 seconds to reset viewer attention span.
+**Workspace Setup**: Add your raw media to backgrounds/ and music/. Populate scripts.csv (Title, Script) and provide a 10s voice sample named my_voice.wav.
 
-Smart Subtitles: Calculates word timings mathematically and groups them into snappy, 6-word title blocks.
-
-Monkey Patched Resiliency: Includes custom runtime patches for PyTorch 2.6 security blocks and Windows FFmpeg audio codec issues.
-
-🛠️ Prerequisites (Windows)
-
-Python 3.10+
-
-eSpeak-NG: Required for the phonetic translation backend. Installed to C:\Program Files\eSpeak NG.
-
-ImageMagick: Required by MoviePy to render the subtitle text graphics.
-
-📁 Folder Structure
-
-To run this project, ensure your directory looks like this (media folders are ignored by git):
-
-├── backgrounds/      # Place your raw .mp4 gameplay/background clips here
-├── music/            # Place your .mp3 background tracks here
-├── output/           # The final Shorts will generate here
-├── scripts.csv       # Must contain 'Title' and 'Script' columns
-├── my_voice.wav      # A 10-15 second clear voice sample for cloning
-└── bot.py            # Main automation script
+**Install & Run**:
+'''pip install TTS moviepy pandas soundfile torchcodec'''
+'''python bot.py'''
 
 
-🚀 Usage
-
-Activate your virtual environment and run:
-
-python bot.py
+**⚖️ License**
+The code is licensed under the **MIT License**.
+Disclaimer: The XTTSv2 voice model is subject to the Coqui Public Model License (CPML) for non-commercial use.
