@@ -1,0 +1,29 @@
+#Environments
+
+.venv/
+venv/
+env/
+pycache/
+
+#AI Models (Do not upload 7GB models to GitHub!)
+
+tts_models/
+
+#Generated Output and Media
+
+output/
+backgrounds/
+music/
+*.mp4
+*.mp3
+*.wav
+*.mov
+
+#Personal Voice Clone (Privacy)
+
+my_voice.wav
+
+#Temporary files
+
+temp_audio_*.wav
+.DS_Store
