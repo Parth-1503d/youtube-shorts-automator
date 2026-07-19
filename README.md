@@ -21,7 +21,6 @@ An advanced, fully automated Python pipeline designed to transform a simple CSV 
 **Install & Run**:
 
 ```pip install TTS moviepy pandas soundfile torchcodec```
-
 ```python bot.py```
 
 
