@@ -16,8 +16,9 @@ An advanced, fully automated Python pipeline designed to transform a simple CSV 
 **Workspace Setup**: Add your raw media to backgrounds/ and music/. Populate scripts.csv (Title, Script) and provide a 10s voice sample named my_voice.wav.
 
 **Install & Run**:
-\'''pip install TTS moviepy pandas soundfile torchcodec'''
-'''python bot.py'''
+```pip install TTS moviepy pandas soundfile torchcodec```
+
+```python bot.py```
 
 
 **⚖️ License**
